@@ -6,60 +6,47 @@ function generatePassword(passLength, lower, upper, numerals, specials) {
   var upperArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var specialArray = "!#$%&'()*+,-./:;<=>?@[\\^_`{|}~";
   var numbArray = "0123456789";
-  for(var i = 0; i<passLength;i++)
-  {
+  for (var i = 0; i < passLength; i++) {
     var ranArray = Math.floor(Math.random() * 4);
 
     // this is where the fun begins // 
-    if (ranArray === 0)
-    {  
-      if (lower === true)
-      {
-       var lowerSelection = Math.floor(Math.random() * lowerArray.length);
-       password[i] = lowerArray[lowerSelection];
+    if (ranArray === 0) {
+      if (lower === true) {
+        var lowerSelection = Math.floor(Math.random() * lowerArray.length);
+        password[i] = lowerArray[lowerSelection];
       }
-      else 
-    {
-      i--;
+      else {
+        i--;
+      }
     }
-    }
-    else if (ranArray === 1)
-    {
-      if (upper === true)
-      {
+    else if (ranArray === 1) {
+      if (upper === true) {
         var upperSelection = Math.floor(Math.random() * upperArray.length);
         password[i] = upperArray[upperSelection];
       }
-      else 
-    {
-      i--;
+      else {
+        i--;
+      }
     }
-    } 
-    else if (ranArray === 2)
-    {
-      if (specials === true)
-      {
+    else if (ranArray === 2) {
+      if (specials === true) {
         var specialSelection = Math.floor(Math.random() * specialArray.length);
         password[i] = specialArray[specialSelection];
       }
-      else 
-    {
-      i--;
+      else {
+        i--;
+      }
     }
-    } 
-    else if (ranArray === 3)
-    {
-      if (numerals === true)
-      {
+    else if (ranArray === 3) {
+      if (numerals === true) {
         var numberSelection = Math.floor(Math.random() * numbArray.length);
         password[i] = numbArray[numberSelection];
       }
-      else 
-    {
-      i--;
+      else {
+        i--;
+      }
     }
-    } 
-    
+
   }
   return password.join('');
 }
@@ -73,7 +60,7 @@ function writePassword() {
     alert("please try again")
     return
   }
-    
+
   var lower = window.confirm("Press 'ok' to include lowercase letters in your password");
   var upper = window.confirm("Press 'ok' to include uppercase letters in your password");
   var numerals = window.confirm("Press 'ok' to include numbers in your password");
