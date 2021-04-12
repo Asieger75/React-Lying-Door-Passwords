@@ -1,7 +1,8 @@
 import React from "react";
+import LoggingButton from "../button";
 
 
-function Body() {
+function Body(props) {
     return (
         <div>
             <div className="wrapper">
@@ -13,14 +14,15 @@ function Body() {
                         <h2>Generate a Password</h2>
                     </div>
                     <div className="card-body">
-                        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+                        <textarea id="password" placeholder="Your Secure Password" aria-label="Generated Password" value={props.password}  ></textarea>
                     </div>
                     <div className="card-footer">
-                        <button id="generate" className="btn">Generate Password</button>
+                       <LoggingButton  setPassword={props.setPassword} Script={props.Script}/>
+                      
                     </div>
                 </div>
             </div>
-            <script src="Js/script.js"></script>
+           
         </div>
 
     )
